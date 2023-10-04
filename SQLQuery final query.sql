@@ -37,13 +37,14 @@ group by  MONTH_ID
 order by 2 desc
 
 
---November seems to be the month, what product do they sell in November, Classic I believe
+--November seems to be the month, what product do they sell in November
 select  MONTH_ID, PRODUCTLINE, sum(sales) Revenue, count(ORDERNUMBER)
 from [dbo].[sales_data_sample]
-where YEAR_ID = 2004 and MONTH_ID = 11 --change year to see the rest
+where YEAR_ID = 2004 and MONTH_ID = 11
 group by  MONTH_ID, PRODUCTLINE
 order by 3 desc
-
+	
+---best customer----
 select 
 		CUSTOMERNAME, 
 		sum(sales) MonetaryValue,
